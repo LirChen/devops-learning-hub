@@ -1,4 +1,4 @@
-const pythonQuestions = [
+const questions = [
     // EASY QUESTIONS (1-10)
     {
         difficulty: "easy",

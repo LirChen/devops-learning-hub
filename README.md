@@ -2,7 +2,7 @@
 
 > A comprehensive, interactive quiz system for mastering DevOps fundamentals
 
-[![Questions](https://img.shields.io/badge/Questions-105+-blue)](https://github.com/yourusername/devops-learning-hub)
+[![Questions](https://img.shields.io/badge/Questions-280+-blue)](https://github.com/yourusername/devops-learning-hub)
 [![Topics](https://img.shields.io/badge/Topics-8-green)](https://github.com/yourusername/devops-learning-hub)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
@@ -10,14 +10,19 @@
 
 ## 📚 What's This?
 
-An interactive learning platform with **105+ interview-ready questions** covering:
+An interactive learning platform with **280+ interview-ready questions** covering:
 
 - 🐍 **Python for DevOps** (25 questions)
 - 🐧 **Linux & Shell** (25 questions)  
 - 🐳 **Docker & Containers** (25 questions)
+- ☸️ **Kubernetes** (25 questions)
+- 🔄 **CI/CD** (25 questions)
+- ☁️ **AWS** (25 questions)
+- 🏗️ **Infrastructure as Code** (25 questions)
+- 📊 **Monitoring & Observability** (25 questions)
 - 🎓 **Junior Final Exam** (30 mixed questions)
-
-**Plus templates for 145+ more questions** on Kubernetes, CI/CD, AWS, IaC, and Monitoring!
+- 🎖️ **Intermediate Final Exam** (35 mixed questions)
+- 🏆 **Advanced Final Exam** (40 real-world scenarios)
 
 ---
 
@@ -37,13 +42,13 @@ An interactive learning platform with **105+ interview-ready questions** coverin
 
 ### Option 1: Use Online (Recommended)
 
-**👉 [Launch Live Demo](https://yourusername.github.io/devops-learning-hub/)**
+**👉 [Launch Live Demo](https://lirchen.github.io/devops-learning-hub/)**
 
 ### Option 2: Run Locally
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/devops-learning-hub.git
+git clone https://github.com/lirchen/devops-learning-hub.git
 
 # Navigate to the folder
 cd devops-learning-hub
@@ -76,16 +81,41 @@ start index.html
 
 ## 🎓 Recommended Study Plan
 
+### Junior Level (Weeks 1-2)
 ```
-Week 1:
+Week 1: Core Skills
   Day 1: Python Quiz (30 min)
   Day 2: Linux Quiz (30 min)
   Day 3: Docker Quiz (30 min)
-  Day 4: Review weak areas
-  Day 5: Final Exam (45 min)
-  Weekend: Retake quizzes, improve scores
+  Day 4-5: Review weak areas
+  Weekend: Junior Final Exam (45 min)
 
-Goal: 90%+ on all quizzes before your interview!
+Week 2: Review & Practice
+  Retake quizzes, aim for 90%+
+```
+
+### Intermediate Level (Weeks 3-4)
+```
+Week 3: Advanced Topics
+  Day 1: Kubernetes Quiz (45 min)
+  Day 2: CI/CD Quiz (45 min)
+  Day 3: AWS Quiz (45 min)
+  Day 4: Review weak areas
+  Day 5: IaC Quiz (45 min)
+  Weekend: Monitoring Quiz (30 min)
+
+Week 4: Mastery
+  Intermediate Final Exam (60 min)
+```
+
+### Advanced Level (Week 5+)
+```
+Week 5: Real-World Scenarios
+  Advanced Final Exam (90 min)
+  Focus on troubleshooting and problem-solving
+  Practice explaining your reasoning
+
+Goal: 85%+ on advanced exam = interview-ready!
 ```
 
 ---
@@ -110,11 +140,40 @@ Goal: 90%+ on all quizzes before your interview!
 - Volumes and networking
 - Multi-stage builds and optimization
 
-### Mixed Topics (Final Exam)
-- Git workflows
-- CI/CD concepts
-- AWS basics (EC2, S3, IAM)
-- Real-world scenarios
+### Kubernetes
+- Pods, Deployments, Services
+- ConfigMaps, Secrets, Volumes
+- Networking and Ingress
+- RBAC, Health Checks, Scaling
+
+### CI/CD
+- Pipeline design patterns
+- Jenkins, GitLab CI, GitHub Actions
+- Deployment strategies (blue-green, canary)
+- Artifact management and security
+
+### AWS
+- EC2, S3, VPC, IAM fundamentals
+- RDS, Lambda, CloudWatch
+- High availability and disaster recovery
+- Cost optimization strategies
+
+### Infrastructure as Code
+- Terraform: state, modules, workspaces
+- Ansible: playbooks, roles, inventory
+- GitOps workflows
+- Best practices and testing
+
+### Monitoring & Observability
+- Prometheus and Grafana
+- Metrics, logging, tracing
+- SLOs and error budgets
+- Alerting best practices
+
+### Final Exams
+- Junior: Mixed fundamentals
+- Intermediate: Cross-topic integration
+- Advanced: Real-world problem solving
 
 ---
 
@@ -131,27 +190,48 @@ Goal: 90%+ on all quizzes before your interview!
 
 ```
 devops-learning-hub/
-├── index.html                  # Landing page
-├── devops_hub.html            # Main quiz menu
-├── quiz_template.js           # Reusable quiz engine
+├── index.html                      # Landing page
+├── devops_hub.html                 # Main quiz menu
+├── quiz_template.js                # Reusable quiz engine
 │
-├── quiz_python.html           # Python quiz UI
-├── python_questions.js        # Python questions
+├── quiz_python.html                # Python quiz UI
+├── python_questions.js             # Python questions (25)
 │
-├── quiz_linux.html            # Linux quiz UI
-├── linux_questions.js         # Linux questions
+├── quiz_linux.html                 # Linux quiz UI
+├── linux_questions.js              # Linux questions (25)
 │
-├── quiz_docker.html           # Docker quiz UI
-├── docker_questions.js        # Docker questions
+├── quiz_docker.html                # Docker quiz UI
+├── docker_questions.js             # Docker questions (25)
 │
-├── final_exam_junior.html     # Final exam UI
-├── final_junior_questions.js  # Final exam questions
+├── quiz_kubernetes.html            # Kubernetes quiz UI
+├── kubernetes_questions.js         # Kubernetes questions (25)
+│
+├── quiz_cicd.html                  # CI/CD quiz UI
+├── cicd_questions.js               # CI/CD questions (25)
+│
+├── quiz_aws.html                   # AWS quiz UI
+├── aws_questions.js                # AWS questions (25)
+│
+├── quiz_iac.html                   # IaC quiz UI
+├── iac_questions.js                # IaC questions (25)
+│
+├── quiz_monitoring.html            # Monitoring quiz UI
+├── monitoring_questions.js         # Monitoring questions (25)
+│
+├── final_exam_junior.html          # Junior exam UI
+├── final_junior_questions.js       # Junior exam (30)
+│
+├── final_exam_intermediate.html    # Intermediate exam UI
+├── final_intermediate_questions.js # Intermediate exam (35)
+│
+├── final_exam_advanced.html        # Advanced exam UI
+├── final_advanced_questions.js     # Advanced exam (40)
 │
 └── docs/
-    ├── README.md              # This file
-    ├── START_HERE.md          # Quick start
-    ├── COMPLETE_SUMMARY.md    # Full documentation
-    └── SAMPLE_QUESTIONS.md    # Question templates
+    ├── README.md                   # This file
+    ├── START_HERE.md               # Quick start
+    ├── COMPLETE_SUMMARY.md         # Full documentation
+    └── SAMPLE_QUESTIONS.md         # Question templates
 ```
 
 ---
@@ -166,8 +246,6 @@ devops-learning-hub/
 
 ### Results
 ![Results](screenshots/results.png)
-
-*(Add screenshots to `/screenshots` folder)*
 
 ---
 
@@ -204,15 +282,15 @@ Want to add more questions? Here's how:
 - [x] Linux Quiz (25 questions)
 - [x] Docker Quiz (25 questions)
 - [x] Junior Final Exam (30 questions)
-- [ ] Kubernetes Quiz (25 questions)
-- [ ] CI/CD Quiz (25 questions)
-- [ ] AWS Quiz (25 questions)
-- [ ] IaC Quiz (25 questions)
-- [ ] Monitoring Quiz (25 questions)
-- [ ] Intermediate Final Exam
-- [ ] Advanced Final Exam
+- [x] Kubernetes Quiz (25 questions)
+- [x] CI/CD Quiz (25 questions)
+- [x] AWS Quiz (25 questions)
+- [x] IaC Quiz (25 questions)
+- [x] Monitoring Quiz (25 questions)
+- [x] Intermediate Final Exam (35 questions)
+- [x] Advanced Final Exam (40 questions)
 
-**Want to help?** Check [SAMPLE_QUESTIONS.md](SAMPLE_QUESTIONS.md) for templates!
+**✨ All quizzes complete! Ready to use!**
 
 ---
 
@@ -261,7 +339,7 @@ MIT License - feel free to use, modify, and share!
 ## 🆘 Support
 
 - 📖 Read the [documentation](COMPLETE_SUMMARY.md)
-- 💬 Open an [issue](https://github.com/yourusername/devops-learning-hub/issues)
+- 💬 Open an [issue](https://github.com/lirchen/devops-learning-hub/issues)
 - 🐛 Found a bug? Report it!
 - ✨ Have a suggestion? Share it!
 
@@ -277,20 +355,20 @@ MIT License - feel free to use, modify, and share!
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/devops-learning-hub?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/devops-learning-hub?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/devops-learning-hub)
+![GitHub stars](https://img.shields.io/github/stars/lirchen/devops-learning-hub?style=social)
+![GitHub forks](https://img.shields.io/github/forks/lirchen/devops-learning-hub?style=social)
+![GitHub issues](https://img.shields.io/github/issues/lirchen/devops-learning-hub)
 
 ---
 
 <p align="center">
   <strong>Ready to ace your DevOps interview?</strong><br>
-  <a href="https://yourusername.github.io/devops-learning-hub/">🚀 Start Learning Now</a>
+  <a href="https://lirchen.github.io/devops-learning-hub/">🚀 Start Learning Now</a>
 </p>
 
 ---
 
 <p align="center">
-  Made with 💙 by <a href="https://github.com/yourusername">Your Name</a><br>
+  Made with 💙 by <a href="https://github.com/lirchen">Your Name</a><br>
   Star ⭐ this repo if you found it helpful!
 </p>
