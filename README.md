@@ -369,6 +369,6 @@ MIT License - feel free to use, modify, and share!
 ---
 
 <p align="center">
-  Made with 💙 by <a href="https://github.com/lirchen">Your Name</a><br>
+  Made with 💙 by <a href="https://github.com/lirchen">Lir Chen</a><br>
   Star ⭐ this repo if you found it helpful!
 </p>
