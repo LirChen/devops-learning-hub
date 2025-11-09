@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Learning Hub - Start Here</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.4em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateX(5px);
+        }
+        
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 20px;
+            border: 2px solid #667eea;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .card-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 10px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .feature h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🚀 DevOps Learning Hub</h1>
+            <p>Your Complete Interview Preparation System</p>
+            <div>
+                <span class="badge">105+ Questions</span>
+                <span class="badge">4 Full Quizzes</span>
+                <span class="badge">100% Free</span>
+                <span class="badge">Zero Setup</span>
+            </div>
+            <a href="devops_hub.html" class="cta-button">🎯 Start Learning Now</a>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number">105+</span>
+                <span class="stat-label">Interview Questions</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Complete Quizzes</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">8</span>
+                <span class="stat-label">DevOps Topics</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Setup Required</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📚 Available Quizzes</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🐍 Python for DevOps</h3>
+                    <p>25 questions covering lists, dictionaries, file operations, JSON, error handling, and automation scripting.</p>
+                    <a href="quiz_python.html" class="card-link">Take Quiz →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🐧 Linux & Shell</h3>
+                    <p>25 questions on commands, permissions, pipes, processes, grep, and shell scripting fundamentals.</p>
+                    <a href="quiz_linux.html" class="card-link">Take Quiz →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🐳 Docker & Containers</h3>
+                    <p>25 questions covering images, containers, Dockerfile, volumes, networks, and best practices.</p>
+                    <a href="quiz_docker.html" class="card-link">Take Quiz →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🎓 Junior Final Exam</h3>
+                    <p>30 comprehensive questions mixing all topics - Python, Linux, Docker, Git, CI/CD, and AWS.</p>
+                    <a href="final_exam_junior.html" class="card-link">Take Exam →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">✨ Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h4>📊 Progress Tracking</h4>
+                    <p>Track your performance by topic and difficulty. See exactly where you need to improve.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>💡 Detailed Explanations</h4>
+                    <p>Every question includes comprehensive explanations and real-world tips from experienced DevOps engineers.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>🎯 Interview-Ready</h4>
+                    <p>Questions mirror real interview scenarios. Practice with confidence!</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>🔄 Retake Anytime</h4>
+                    <p>Refresh the page to retake any quiz. Track your improvement over time.</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>📱 Works Everywhere</h4>
+                    <p>Fully responsive design works on desktop, tablet, and mobile. Learn anywhere!</p>
+                </div>
+                
+                <div class="feature">
+                    <h4>🚫 No Installation</h4>
+                    <p>Everything runs in your browser. No backend, no database, no hassle.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📖 Documentation</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🚀 START_HERE.md</h3>
+                    <p>Quick start guide to get you up and running in 30 seconds.</p>
+                    <a href="START_HERE.md" class="card-link" download>Download →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 COMPLETE_SUMMARY.md</h3>
+                    <p>Comprehensive overview of everything included and how to use it.</p>
+                    <a href="COMPLETE_SUMMARY.md" class="card-link" download>Download →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📝 README.md</h3>
+                    <p>Complete guide on how to extend the system and add more quizzes.</p>
+                    <a href="README.md" class="card-link" download>Download →</a>
+                </div>
+                
+                <div class="card">
+                    <h3>💡 SAMPLE_QUESTIONS.md</h3>
+                    <p>Templates and examples for creating quizzes on Kubernetes, CI/CD, AWS, and more.</p>
+                    <a href="SAMPLE_QUESTIONS.md" class="card-link" download>Download →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🎯 Recommended Study Plan</h2>
+            <div class="card" style="margin-top: 20px;">
+                <h3>Week 1: Master the Fundamentals</h3>
+                <p><strong>Day 1:</strong> Python Quiz (30 min) → Review explanations<br>
+                <strong>Day 2:</strong> Linux Quiz (30 min) → Practice commands<br>
+                <strong>Day 3:</strong> Docker Quiz (30 min) → Run containers<br>
+                <strong>Day 4:</strong> Review all weak areas → Hands-on practice<br>
+                <strong>Day 5:</strong> Junior Final Exam (45 min) → Test everything<br>
+                <strong>Weekend:</strong> Retake quizzes → Aim for 90%+ scores</p>
+            </div>
+            
+            <div class="card" style="margin-top: 20px;">
+                <h3>Before Your Interview</h3>
+                <p>
+                ✅ Score 90%+ on all quizzes<br>
+                ✅ Understand ALL explanations (don't just memorize)<br>
+                ✅ Have hands-on experience with each tool<br>
+                ✅ Can explain concepts in your own words<br>
+                ✅ Feel confident and prepared!
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 40px; border-radius: 20px; text-align: center; color: white;">
+                <h2 style="font-size: 2.5em; margin-bottom: 15px;">Ready to Ace Your Interview?</h2>
+                <p style="font-size: 1.3em; margin-bottom: 25px;">Start with the main hub and choose your first quiz!</p>
+                <a href="devops_hub.html" style="display: inline-block; background: white; color: #f5576c; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: bold; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    Launch Learning Hub 🚀
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p style="font-size: 1.2em; margin-bottom: 10px;">💪 Everything you need to succeed is right here!</p>
+            <p>Good luck with your DevOps journey, Lir! 🌟</p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.7;">
+                Created with ❤️ for DevOps learners everywhere<br>
+                November 2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>

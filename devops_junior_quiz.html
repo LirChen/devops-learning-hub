@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Junior Interview Quiz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            direction: ltr;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .question-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .question-number {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .difficulty {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .difficulty.easy { background: #d4edda; color: #155724; }
+        .difficulty.medium { background: #fff3cd; color: #856404; }
+        .difficulty.hard { background: #f8d7da; color: #721c24; }
+        
+        .question-text {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        
+        .options {
+            margin-top: 20px;
+        }
+        
+        .option {
+            background: white;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .option:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+        
+        .option input[type="radio"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .option label {
+            cursor: pointer;
+            flex-grow: 1;
+            font-size: 1.1em;
+        }
+        
+        .option.selected {
+            background: #e3e8ff;
+            border-color: #667eea;
+        }
+        
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .explanation {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #2196f3;
+            display: none;
+        }
+        
+        .explanation.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .explanation h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .explanation p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+            flex-grow: 1;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .results {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+        
+        .results.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .score-text {
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        
+        .performance {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        .feedback {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .topic-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .topic-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .topic-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .topic-score {
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 DevOps Junior Interview Quiz</h1>
+            <p>Test your Python, Linux, and DevOps knowledge</p>
+        </div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar">0%</div>
+        </div>
+        
+        <div id="quizContainer"></div>
+        
+        <div class="buttons">
+            <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" style="display:none;">⬅ Previous</button>
+            <button class="btn btn-primary" id="checkBtn" onclick="checkAnswer()" disabled>Check Answer</button>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="display:none;">Next Question ➡</button>
+        </div>
+        
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                difficulty: "easy",
+                topic: "Python Basics",
+                question: "What will be the output of the following Python code?",
+                code: `list1 = [1, 2, 3]
+list2 = list1
+list2.append(4)
+print(list1)`,
+                options: [
+                    "[1, 2, 3]",
+                    "[1, 2, 3, 4]",
+                    "[4]",
+                    "Error"
+                ],
+                correct: 1,
+                explanation: "In Python, lists are mutable objects. When you assign list1 to list2, you're creating a reference to the same list object, not a copy. Therefore, when you append 4 to list2, it also affects list1 because they both point to the same list in memory. To create a copy, you would use list2 = list1.copy() or list2 = list1[:]."
+            },
+            {
+                id: 2,
+                difficulty: "easy",
+                topic: "File Operations",
+                question: "Which mode should you use to open a file for appending data without overwriting existing content?",
+                options: [
+                    "'w'",
+                    "'r'",
+                    "'a'",
+                    "'x'"
+                ],
+                correct: 2,
+                explanation: "'a' (append mode) opens the file for writing and positions the pointer at the end of the file. If the file doesn't exist, it creates a new one. 'w' would overwrite the file, 'r' is for reading only, and 'x' creates a new file but fails if it already exists."
+            },
+            {
+                id: 3,
+                difficulty: "medium",
+                topic: "Python Strings",
+                question: "What is the result of the following code?",
+                code: `text = "DevOps Engineer"
+result = text.split()[1][0:3]
+print(result)`,
+                options: [
+                    "Dev",
+                    "Ops",
+                    "Eng",
+                    "eer"
+                ],
+                correct: 2,
+                explanation: "text.split() splits the string by spaces, resulting in ['DevOps', 'Engineer']. [1] selects the second element 'Engineer'. [0:3] slices the first three characters 'Eng'. This is a common pattern for parsing structured text in DevOps scripts."
+            },
+            {
+                id: 4,
+                difficulty: "easy",
+                topic: "Linux Commands",
+                question: "Which Linux command is used to display the first 10 lines of a file?",
+                options: [
+                    "tail",
+                    "head",
+                    "cat",
+                    "less"
+                ],
+                correct: 1,
+                explanation: "'head' displays the first 10 lines of a file by default. You can specify a different number with 'head -n 20 file.txt'. 'tail' shows the last lines, 'cat' displays the entire file, and 'less' is a pager for viewing files."
+            },
+            {
+                id: 5,
+                difficulty: "medium",
+                topic: "Python Dictionaries",
+                question: "What happens when you try to access a key that doesn't exist in a dictionary?",
+                code: `servers = {'web': '10.0.1.5', 'db': '10.0.1.6'}
+print(servers['cache'])`,
+                options: [
+                    "Returns None",
+                    "Returns empty string",
+                    "Raises KeyError",
+                    "Returns False"
+                ],
+                correct: 2,
+                explanation: "Python raises a KeyError when you try to access a non-existent key. To avoid this, you can use servers.get('cache') which returns None by default, or servers.get('cache', 'default_value') to specify a default value. This is important in DevOps scripts to prevent crashes."
+            },
+            {
+                id: 6,
+                difficulty: "medium",
+                topic: "File Parsing",
+                question: "You need to parse a log file where each line has the format 'YYYY-MM-DD HH:MM:SS LEVEL Message'. Which is the best way to extract the log level?",
+                code: `line = "2025-11-08 10:23:45 ERROR Database connection failed"`,
+                options: [
+                    "line[20:25]",
+                    "line.split()[2]",
+                    "line.split(':')[2]",
+                    "line[2]"
+                ],
+                correct: 1,
+                explanation: "line.split()[2] is the most reliable approach because it splits by whitespace and gets the third element (index 2), which is the log level. Using fixed positions like line[20:25] would break if the timestamp format changes. This flexibility is crucial for parsing real-world log files."
+            },
+            {
+                id: 7,
+                difficulty: "easy",
+                topic: "Python Loops",
+                question: "What does the 'continue' statement do in a loop?",
+                options: [
+                    "Exits the loop completely",
+                    "Skips the rest of the current iteration and moves to the next",
+                    "Restarts the loop from the beginning",
+                    "Pauses the loop execution"
+                ],
+                correct: 1,
+                explanation: "'continue' skips the remaining code in the current iteration and immediately starts the next iteration. 'break' would exit the loop completely. This is useful when processing files and you want to skip invalid lines without stopping the entire process."
+            },
+            {
+                id: 8,
+                difficulty: "hard",
+                topic: "Python Error Handling",
+                question: "What is the output of this code?",
+                code: `def process_config(filename):
+    try:
+        with open(filename, 'r') as f:
+            return f.read()
+    except FileNotFoundError:
+        return "File not found"
+    finally:
+        print("Cleanup done")
+
+result = process_config('missing.txt')
+print(result)`,
+                options: [
+                    "File not found",
+                    "Cleanup done\\nFile not found",
+                    "Error",
+                    "None\\nCleanup done"
+                ],
+                correct: 1,
+                explanation: "The 'finally' block always executes, regardless of whether an exception occurred. So 'Cleanup done' prints first, then the function returns 'File not found', which is printed. The finally block is perfect for cleanup operations like closing connections or releasing resources, which is critical in DevOps automation."
+            },
+            {
+                id: 9,
+                difficulty: "medium",
+                topic: "Linux Permissions",
+                question: "What does the command 'chmod 755 script.sh' do?",
+                options: [
+                    "Owner: rwx, Group: r-x, Others: r-x",
+                    "Owner: rwx, Group: rwx, Others: rwx",
+                    "Owner: r-x, Group: r-x, Others: r-x",
+                    "Owner: rw-, Group: r--, Others: r--"
+                ],
+                correct: 0,
+                explanation: "755 in octal means: 7 (rwx) for owner, 5 (r-x) for group, and 5 (r-x) for others. The owner can read, write, and execute; group and others can read and execute but not write. This is a common permission setting for scripts in DevOps - owner can modify, others can run."
+            },
+            {
+                id: 10,
+                difficulty: "easy",
+                topic: "Git Basics",
+                question: "Which Git command is used to create a new branch and switch to it in one step?",
+                options: [
+                    "git branch new-feature",
+                    "git checkout new-feature",
+                    "git checkout -b new-feature",
+                    "git switch new-feature"
+                ],
+                correct: 2,
+                explanation: "'git checkout -b new-feature' creates a new branch and switches to it immediately. This is equivalent to running 'git branch new-feature' followed by 'git checkout new-feature'. It's the most common way to start working on a new feature in DevOps workflows."
+            },
+            {
+                id: 11,
+                difficulty: "medium",
+                topic: "Python JSON",
+                question: "What is the correct way to convert a Python dictionary to a JSON string?",
+                options: [
+                    "str(dictionary)",
+                    "dict.to_json()",
+                    "json.dumps(dictionary)",
+                    "json.load(dictionary)"
+                ],
+                correct: 2,
+                explanation: "json.dumps() converts a Python object to a JSON-formatted string. json.loads() does the opposite (string to object). json.dump() writes to a file, and json.load() reads from a file. JSON is extensively used in DevOps for configuration files and API responses."
+            },
+            {
+                id: 12,
+                difficulty: "hard",
+                topic: "Docker Basics",
+                question: "What is the difference between 'docker run' and 'docker start'?",
+                options: [
+                    "They are the same command",
+                    "'docker run' creates and starts a new container, 'docker start' starts an existing stopped container",
+                    "'docker start' creates and starts a new container, 'docker run' starts an existing container",
+                    "'docker run' is for images, 'docker start' is for containers"
+                ],
+                correct: 1,
+                explanation: "'docker run' creates a new container from an image and starts it. 'docker start' restarts an existing container that was previously stopped. Understanding this distinction is crucial for container management in DevOps. Use 'docker ps -a' to see all containers including stopped ones."
+            },
+            {
+                id: 13,
+                difficulty: "medium",
+                topic: "Python List Operations",
+                question: "What is the most efficient way to check if a value exists in a large list?",
+                options: [
+                    "Use a for loop",
+                    "Convert to set and use 'in' operator",
+                    "Use list.index()",
+                    "Use list.count()"
+                ],
+                correct: 1,
+                explanation: "Converting a list to a set and using the 'in' operator is O(1) average time complexity, while searching in a list is O(n). For large lists that you'll search multiple times, this optimization can significantly improve performance. In DevOps scripts processing large log files, this matters."
+            },
+            {
+                id: 14,
+                difficulty: "easy",
+                topic: "Linux Pipes",
+                question: "What does the pipe '|' operator do in Linux?",
+                options: [
+                    "Redirects output to a file",
+                    "Takes output of one command and uses it as input for another",
+                    "Runs commands in parallel",
+                    "Creates an OR condition"
+                ],
+                correct: 1,
+                explanation: "The pipe '|' takes the standard output of the command on the left and passes it as standard input to the command on the right. For example, 'cat access.log | grep ERROR' searches for ERROR in the log. Pipes are fundamental to Unix philosophy and DevOps workflows."
+            },
+            {
+                id: 15,
+                difficulty: "medium",
+                topic: "Python Functions",
+                question: "What is the output of this code?",
+                code: `def modify_list(lst=[]):
+    lst.append(1)
+    return lst
+
+print(modify_list())
+print(modify_list())`,
+                options: [
+                    "[1]\\n[1]",
+                    "[1]\\n[1, 1]",
+                    "[]\\n[1]",
+                    "Error"
+                ],
+                correct: 1,
+                explanation: "This is a common Python pitfall! Default mutable arguments are created once when the function is defined, not each time it's called. So the same list object is reused across calls. To avoid this, use 'def modify_list(lst=None): if lst is None: lst = []'. This bug can cause serious issues in DevOps automation scripts."
+            },
+            {
+                id: 16,
+                difficulty: "hard",
+                topic: "CI/CD Concepts",
+                question: "In a CI/CD pipeline, what is the primary purpose of the 'staging' environment?",
+                options: [
+                    "To develop new features",
+                    "To test code in a production-like environment before deploying to production",
+                    "To store backup data",
+                    "To run performance tests only"
+                ],
+                correct: 1,
+                explanation: "Staging is a production-like environment where you test code before deploying to production. It helps catch environment-specific issues that unit tests might miss. A typical pipeline is: Dev → Test → Staging → Production. Each environment gets progressively more like production."
+            },
+            {
+                id: 17,
+                difficulty: "easy",
+                topic: "YAML Basics",
+                question: "In YAML, how do you represent a list?",
+                options: [
+                    "Using square brackets []",
+                    "Using curly braces {}",
+                    "Using dashes - for each item",
+                    "Using commas between items"
+                ],
+                correct: 2,
+                explanation: "YAML uses dashes (-) to represent list items, with each item on a new line. YAML is extensively used in DevOps for configuration files (Kubernetes, Ansible, CI/CD pipelines). Example:\\nservers:\\n  - web1\\n  - web2\\n  - db1"
+            },
+            {
+                id: 18,
+                difficulty: "medium",
+                topic: "Monitoring Concepts",
+                question: "What is the difference between 'monitoring' and 'observability'?",
+                options: [
+                    "They are the same thing",
+                    "Monitoring is checking if systems are up, observability helps understand why they fail",
+                    "Observability is only for cloud systems",
+                    "Monitoring is newer than observability"
+                ],
+                correct: 1,
+                explanation: "Monitoring tells you when something is wrong (metrics, alerts). Observability tells you why something is wrong (logs, traces, metrics combined). Observability provides deeper insights through logs, metrics, and distributed tracing. Both are crucial for DevOps, but observability gives you the context to debug complex distributed systems."
+            },
+            {
+                id: 19,
+                difficulty: "hard",
+                topic: "Kubernetes Basics",
+                question: "What is a Kubernetes Pod?",
+                options: [
+                    "A single container",
+                    "A cluster of nodes",
+                    "The smallest deployable unit that can contain one or more containers",
+                    "A type of storage volume"
+                ],
+                correct: 2,
+                explanation: "A Pod is the smallest deployable unit in Kubernetes and can contain one or more containers that share network and storage. Containers in a pod share the same IP address and can communicate via localhost. Most commonly, one pod = one container, but sidecar patterns use multiple containers per pod."
+            },
+            {
+                id: 20,
+                difficulty: "medium",
+                topic: "Infrastructure as Code",
+                question: "What is the main benefit of Infrastructure as Code (IaC)?",
+                options: [
+                    "It's faster than manual configuration",
+                    "Infrastructure can be versioned, tested, and reproduced consistently",
+                    "It only works with cloud providers",
+                    "It eliminates the need for DevOps engineers"
+                ],
+                correct: 1,
+                explanation: "IaC treats infrastructure like software code - it can be versioned in Git, reviewed, tested, and deployed consistently across environments. Tools like Terraform, Ansible, and CloudFormation enable this. This eliminates configuration drift and makes disaster recovery much easier. It's a fundamental DevOps practice."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const q = questions[currentQuestion];
+            const container = document.getElementById('quizContainer');
+            
+            let html = `
+                <div class="question-card">
+                    <div class="question-header">
+                        <span class="question-number">Question ${currentQuestion + 1}/${questions.length}</span>
+                        <span class="difficulty ${q.difficulty}">${q.difficulty.toUpperCase()}</span>
+                    </div>
+                    <div class="question-text">${q.question}</div>
+                    ${q.code ? `<div class="code-block">${q.code}</div>` : ''}
+                    <div class="options">
+            `;
+            
+            q.options.forEach((option, index) => {
+                html += `
+                    <div class="option" onclick="selectOption(${index})">
+                        <input type="radio" name="answer" id="option${index}" value="${index}">
+                        <label for="option${index}">${option}</label>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                    <div class="explanation" id="explanation">
+                        <h3>💡 Explanation:</h3>
+                        <p>${q.explanation}</p>
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+            
+            // Update buttons
+            document.getElementById('prevBtn').style.display = currentQuestion > 0 ? 'block' : 'none';
+            document.getElementById('checkBtn').style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('checkBtn').disabled = true;
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function selectOption(index) {
+            if (answered) return;
+            
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('.option')[index].classList.add('selected');
+            document.getElementById(`option${index}`).checked = true;
+            document.getElementById('checkBtn').disabled = false;
+        }
+
+        function checkAnswer() {
+            if (answered) return;
+            
+            const selected = document.querySelector('input[name="answer"]:checked');
+            if (!selected) return;
+            
+            answered = true;
+            const selectedIndex = parseInt(selected.value);
+            const q = questions[currentQuestion];
+            
+            userAnswers[currentQuestion] = selectedIndex;
+            
+            const options = document.querySelectorAll('.option');
+            options[q.correct].classList.add('correct');
+            
+            if (selectedIndex !== q.correct) {
+                options[selectedIndex].classList.add('incorrect');
+            } else {
+                score++;
+            }
+            
+            document.getElementById('explanation').classList.add('show');
+            document.getElementById('checkBtn').style.display = 'none';
+            
+            if (currentQuestion < questions.length - 1) {
+                document.getElementById('nextBtn').style.display = 'block';
+            } else {
+                document.getElementById('nextBtn').innerHTML = '🏁 Finish Quiz';
+                document.getElementById('nextBtn').style.display = 'block';
+            }
+            
+            options.forEach(opt => opt.style.pointerEvents = 'none');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = `${currentQuestion + 1}/${questions.length}`;
+        }
+
+        function showResults() {
+            const percentage = Math.round((score / questions.length) * 100);
+            
+            let performance = "";
+            let performanceColor = "";
+            
+            if (percentage >= 90) {
+                performance = "Outstanding! 🌟";
+                performanceColor = "#28a745";
+            } else if (percentage >= 75) {
+                performance = "Great Job! 🎉";
+                performanceColor = "#17a2b8";
+            } else if (percentage >= 60) {
+                performance = "Good Work! 👍";
+                performanceColor = "#ffc107";
+            } else {
+                performance = "Keep Practicing! 💪";
+                performanceColor = "#dc3545";
+            }
+            
+            // Calculate topic breakdown
+            const topicScores = {};
+            questions.forEach((q, index) => {
+                if (!topicScores[q.topic]) {
+                    topicScores[q.topic] = { correct: 0, total: 0 };
+                }
+                topicScores[q.topic].total++;
+                if (userAnswers[index] === q.correct) {
+                    topicScores[q.topic].correct++;
+                }
+            });
+            
+            let topicHTML = '<div class="topic-breakdown">';
+            for (const [topic, scores] of Object.entries(topicScores)) {
+                const topicPercentage = Math.round((scores.correct / scores.total) * 100);
+                topicHTML += `
+                    <div class="topic-card">
+                        <div class="topic-name">${topic}</div>
+                        <div class="topic-score">${scores.correct}/${scores.total} (${topicPercentage}%)</div>
+                    </div>
+                `;
+            }
+            topicHTML += '</div>';
+            
+            document.getElementById('quizContainer').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+            
+            const resultsHTML = `
+                <h2 style="color: #333; margin-bottom: 30px;">Quiz Complete! 🎊</h2>
+                <div class="score-circle">
+                    <div class="score-text">${percentage}%</div>
+                </div>
+                <div class="performance" style="color: ${performanceColor};">${performance}</div>
+                <div class="feedback">
+                    <h3 style="color: #333; margin-bottom: 15px;">Your Score: ${score} out of ${questions.length}</h3>
+                    <p style="color: #666; font-size: 1.1em;">
+                        ${percentage >= 75 ? 
+                            "Excellent! You have a strong understanding of DevOps fundamentals. You're well-prepared for junior DevOps interviews!" :
+                            "Good effort! Review the topics where you scored lower and practice more. Focus on hands-on labs and real-world scenarios."}
+                    </p>
+                </div>
+                <h3 style="margin: 30px 0 15px 0; color: #333;">Performance by Topic:</h3>
+                ${topicHTML}
+                <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 30px; width: auto; padding: 15px 40px;">
+                    🔄 Retake Quiz
+                </button>
+            `;
+            
+            const results = document.getElementById('results');
+            results.innerHTML = resultsHTML;
+            results.classList.add('show');
+        }
+
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html>
