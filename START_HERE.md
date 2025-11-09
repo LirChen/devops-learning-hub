@@ -1,8 +1,8 @@
 # 🚀 START HERE - Quick Guide
 
-## Welcome to Your DevOps Learning Hub!
+## Welcome to DevOps Learning Hub!
 
-You have a complete, professional quiz system with 105+ questions ready for your interview preparation.
+A complete, professional quiz system with 280+ questions for DevOps interview preparation.
 
 ---
 
@@ -15,7 +15,7 @@ You have a complete, professional quiz system with 105+ questions ready for your
 
 ---
 
-## 📚 What You Have
+## 📚 What's Available
 
 | File | What It Is | Use It For |
 |------|------------|------------|
@@ -23,23 +23,50 @@ You have a complete, professional quiz system with 105+ questions ready for your
 | **quiz_python.html** | 🐍 Python quiz | 25 questions on Python for DevOps |
 | **quiz_linux.html** | 🐧 Linux quiz | 25 questions on Linux & Shell |
 | **quiz_docker.html** | 🐳 Docker quiz | 25 questions on containers |
-| **final_exam_junior.html** | 🎓 Final exam | 30 mixed questions |
-| **COMPLETE_SUMMARY.md** | 📖 Full guide | Read this for everything |
-| **README.md** | 📝 Documentation | How to extend the system |
+| **quiz_kubernetes.html** | ☸️ Kubernetes quiz | 25 questions on K8s |
+| **quiz_cicd.html** | 🔄 CI/CD quiz | 25 questions on pipelines |
+| **quiz_aws.html** | ☁️ AWS quiz | 25 questions on cloud |
+| **quiz_iac.html** | 🏗️ IaC quiz | 25 questions on Terraform/Ansible |
+| **quiz_monitoring.html** | 📊 Monitoring quiz | 25 questions on observability |
+| **final_exam_junior.html** | 🎓 Junior exam | 30 mixed questions |
+| **final_exam_intermediate.html** | 🎖️ Intermediate exam | 35 mixed questions |
+| **final_exam_advanced.html** | 🏆 Advanced exam | 40 real-world scenarios |
+| **COMPLETE_SUMMARY.md** | 📖 Full guide | Complete documentation |
+| **README.md** | 📝 Project info | How to use and extend |
 | **SAMPLE_QUESTIONS.md** | 💡 Templates | Create more quizzes |
 
 ---
 
 ## 🎯 Recommended Study Plan
 
-### This Week:
+### Junior Level (Weeks 1-2):
 ```
-Monday    → Python Quiz (30 min)
-Tuesday   → Linux Quiz (30 min)
-Wednesday → Docker Quiz (30 min)
-Thursday  → Review weak areas
-Friday    → Final Exam (45 min)
-Weekend   → Retake quizzes, improve scores
+Week 1: Core Skills
+  Day 1: Python Quiz (30 min)
+  Day 2: Linux Quiz (30 min)
+  Day 3: Docker Quiz (30 min)
+  Day 4-5: Review weak areas
+  Weekend: Junior Final Exam (45 min)
+
+Week 2: Review & Practice
+  Retake quizzes, aim for 90%+
+```
+
+### Intermediate Level (Weeks 3-4):
+```
+Week 3: Advanced Topics
+  Day 1: Kubernetes Quiz (45 min)
+  Day 2: CI/CD Quiz (45 min)
+  Day 3: AWS Quiz (45 min)
+  Day 4-5: IaC & Monitoring Quizzes
+  Weekend: Intermediate Final Exam (60 min)
+```
+
+### Advanced Level (Week 5+):
+```
+Week 5: Real-World Scenarios
+  Advanced Final Exam (90 min)
+  Focus on troubleshooting and problem-solving
 ```
 
 ### Before Your Interview:
@@ -84,12 +111,12 @@ A: Yes! Everything runs in your browser, no internet needed.
 
 ## 🎓 What Makes This Special
 
-✅ **105 interview-ready questions** (more than many bootcamps!)
+✅ **280+ interview-ready questions** covering all DevOps topics
 ✅ **Detailed explanations** for every answer
 ✅ **Real-world tips** from experienced DevOps engineers
 ✅ **Progress tracking** by topic and difficulty
 ✅ **Zero setup** - just open and start
-✅ **Completely free** and fully yours to use
+✅ **Completely free** and open source
 
 ---
 
@@ -121,7 +148,7 @@ Third Try  → 90%+   (interview ready!)
 
 ## 🎉 You're Ready!
 
-Everything you need is here. Start with `devops_hub.html` and begin your journey.
+Everything you need is here. Start with `devops_hub.html` and begin your DevOps learning journey.
 
 **Good luck with your DevOps interview preparation! 💪🚀**
 
